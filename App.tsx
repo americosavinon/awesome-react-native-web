@@ -1,38 +1,42 @@
-import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react"
+import { Button, Image, StyleSheet, Text, View } from "react-native"
 
-const logoUri = `https://source.unsplash.com/hIgeoQjS_iE/500x500`
+const logoUri = `https://www.google.com/a/cpanel/rallyhealth.com/images/logo.gif?service=google_gsuite`
 
 export default function App() {
   const [count, setCount] = useState(0)
-  
+
   return (
     <View style={styles.container}>
-      {/* <Image
+      <Image
         accessibilityLabel="React logo"
         source={{ uri: logoUri }}
         resizeMode="center"
-        style={styles.backgroundImage}
-      /> */}
-      <Text style={styles.text}>Open up App.tsx to start working on your app!!!</Text>
-      <Text style={styles.text}>Count: {count}</Text>
-      <Button title="increment" onPress={() => setCount(count + 1)}></Button>
+        style={styles.logo}
+      />
+      <Text style={styles.text}>Welcome to Virtual Visits</Text>
+      <Text style={styles.text}>(total visits: {count})</Text>
+      <Button
+        title="Start a new visit"
+        onPress={() => setCount(count + 1)}
+      ></Button>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#000",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  backgroundImage: {
-    height: '100%',
-    width: '100%',
+  logo: {
+    height: 200,
+    width: 200
   },
   text: {
-    color: 'orange'
+    fontSize: 20,
+    color: "orange"
   }
-});
+})
